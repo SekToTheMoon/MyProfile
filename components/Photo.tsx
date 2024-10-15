@@ -1,7 +1,6 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Moirai_One } from "next/font/google";
 import Image from "next/image";
 function Photo() {
   return (

@@ -1,6 +1,5 @@
 "use client";
-import { animate, motion } from "framer-motion";
-import { exit } from "process";
+import { motion } from "framer-motion";
 
 const stairAnimation = {
   initial: {
