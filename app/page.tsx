@@ -1,3 +1,4 @@
+"use client";
 import Social from "@/components/Social";
 import Photo from "@/components/Photo";
 import { Button } from "@/components/ui/button";
