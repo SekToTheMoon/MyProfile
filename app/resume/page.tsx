@@ -9,7 +9,6 @@ import {
   FaVuejs,
   FaPhp,
   FaPython,
-  FaDocker,
 } from "react-icons/fa";
 import {
   SiTailwindcss,
@@ -22,8 +21,7 @@ import { GrOracle } from "react-icons/gr";
 import { DiMongodb } from "react-icons/di";
 const about = {
   title: "About me",
-  describe: `จบจาก สาขาเทคโนโลยีสารสนเทศ วิทยาลัยเทคโนโลยีภาคตะวันออก
-ปัจจุบัน กำลังศึกษาที่ คณะ วิศวกรรมศาสตร์และเทคโนโลยี   สาขา วศ.บ.วิศวกรรมคอมพิวเตอร์และปัญญาประดิษฐ์ (รอจบการศึกษา) 
+  describe: `จบจาก คณะ วิศวกรรมศาสตร์และเทคโนโลยี สาขา วศ.บ.วิศวกรรมคอมพิวเตอร์และปัญญาประดิษฐ์ ( ป.ตรี ) มีความชื่อชอบในการ ออกกำลังกาย, เล่นเกม, ทำอาหาร
 มีความสนใจในตำแหน่ง Fullstack Programmer`,
   info: [
     { fieldName: "Name", fieldValue: "อัครพงศ์ สุขประเสริฐ" },
@@ -111,10 +109,6 @@ const skills = {
     {
       icon: <FaNodeJs />,
       name: "node.js",
-    },
-    {
-      icon: <FaDocker />,
-      name: "Docker",
     },
     {
       icon: <SiPostman />,

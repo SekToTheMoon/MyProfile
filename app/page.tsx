@@ -11,7 +11,7 @@ function page() {
       <div className="container mx-auto h-full">
         <div className="flex flex-col xl:flex-row items-center justify-between xl:pt-8 xl:pd-24">
           <div className="text-center  xl:text-left order-2 xl:order-none">
-            <span className="text-xl ">Software Developer</span>
+            <span className="text-xl ">Full-stack Developer</span>
 
             <motion.div
               initial={{ opacity: 0, scale: 0.9 }}

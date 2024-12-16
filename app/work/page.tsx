@@ -14,29 +14,8 @@ import {
 } from "@/components/ui/tooltip";
 import Link from "next/link";
 import WorkSliderBtns from "@/components/newUi/WorkSliderBtns";
-
-const projects = [
-  {
-    num: "01",
-    category: "Accounting Software",
-    title: "fullsack",
-    description: `จัดการข้อมูลพื้นฐาน เช่น ลูกค้า พนักงาน บริษัท สินค้า แผนก และตำแหน่ง โดยสามารถกำหนดสิทธิ์การเข้าถึงแต่ละหน้าต่างได้อย่างง่ายดาย
-โปรแกรมรองรับการจัดการบัญชีธนาคารเพื่อรับเงิน ซึ่งช่วยให้การดำเนินธุรกรรมทางการเงินเป็นไปอย่างราบรื่น
-ระบบทำการขายด้วยการออก ใบเสนอราคา ใบวางบิล ใบแจ้งหนี้ และใบเสร็จรับเงิน รวมถึงใบเสร็จแบบย่อสำหรับการขายสินค้าหน้าร้าน
-ก่อนการออกเอกสารต่างๆ โปรแกรมจะมีการอนุมัติจากพนักงานบัญชีที่ดำรงตำแหน่งหัวหน้า เพื่อความถูกต้องและโปร่งใสในการทำงาน
-มี Dashboard เพื่อรายงานผลการดำเนินงาน 
-   `,
-    stack: [
-      { name: "React.js" },
-      { name: "Tailwind" },
-      { name: "Node.js" },
-      { name: "MySQL" },
-    ],
-    image: "/assets/project1.png",
-    live: "https://hubwater.netlify.app/",
-    github: "https://github.com/SekToTheMoon/hubwater",
-  },
-];
+import projects from "../constatns/projectList";
+import Image from "next/image";
 
 function Work() {
   const [project, setProject] = useState(projects[0]);
@@ -52,7 +31,7 @@ function Work() {
         opacity: 1,
         transition: { delay: 0.4, duration: 0.4, ease: "easeIn" },
       }}
-      className="min-h-[80vh] flex flex-col justify-center py-12 xl:px-0"
+      className="min-h-[80vh] flex flex-col justify-center xl:px-0"
     >
       <div className="container mx-auto">
         <div className="flex flex-col xl:flex-row xl:gap-[30px]">
@@ -79,20 +58,22 @@ function Work() {
               </ul>
               <div className="border border-white/20"></div>
               <div className="flex items-center gap-4">
-                <Link href={project.live}>
-                  <TooltipProvider delayDuration={100}>
-                    <Tooltip>
-                      <TooltipTrigger className="w-[100px] h-[70px] rounded-2xl bg-white/5 flex justify-center items-center group">
-                        <p className="text-white text-2xl group-hover:text-accent-hover">
-                          Demo
-                        </p>
-                      </TooltipTrigger>
-                      <TooltipContent>
-                        <p>Live project</p>
-                      </TooltipContent>
-                    </Tooltip>
-                  </TooltipProvider>
-                </Link>
+                {project?.live && (
+                  <Link href={project.live}>
+                    <TooltipProvider delayDuration={100}>
+                      <Tooltip>
+                        <TooltipTrigger className="w-[100px] h-[70px] rounded-2xl bg-white/5 flex justify-center items-center group">
+                          <p className="text-white text-2xl group-hover:text-accent-hover">
+                            Demo
+                          </p>
+                        </TooltipTrigger>
+                        <TooltipContent>
+                          <p>Live project</p>
+                        </TooltipContent>
+                      </Tooltip>
+                    </TooltipProvider>
+                  </Link>
+                )}
                 <Link href={project.github}>
                   <TooltipProvider delayDuration={100}>
                     <Tooltip>
@@ -119,18 +100,15 @@ function Work() {
                 return (
                   <SwiperSlide key={index} className="w-full">
                     <div className="h-[460px] relative group flex justify-center items-center bg-pink-50/20"></div>
-                    <div className="absolute top-0 bottom-0 w-full h-full bg-black/10 z-10">
+                    <div className="absolute top-0 bottom-0 w-full h-full bg-primary z-10">
                       <div className="relative w-full h-full">
-                        <video
-                          autoPlay
-                          muted
-                          loop
-                          controls
-                          className="w-full h-full object-contain"
-                          src="/assets/project1.mp4"
-                        >
-                          Your browser does not support the video tag.
-                        </video>
+                        <Image
+                          src={project.image}
+                          alt={project.title}
+                          sizes="(max-width: 768px) 100vw"
+                          fill
+                          className="object-contain rounded-lg"
+                        />
                       </div>
                     </div>
                   </SwiperSlide>
